@@ -10,16 +10,16 @@
 <body>
 	<div id="wrapper">
 		<header>
-			<?php include("inc/header.php"); ?>
+			<?php include("../inc/header.php"); ?>
 		</header>
 		<!-- header -->
 
 		<section id="leftColumn">
 			<nav>
-				<?php include("inc/meny.php"); ?>
+				<?php include("../inc/meny.php"); ?>
 			</nav>
 			<aside>
-				<?php include("inc/aside.php"); ?>
+				<?php include("../inc/aside.php"); ?>
 			</aside>
 		</section>
 		<!-- End leftColumn -->
@@ -40,7 +40,7 @@
 		<!-- End main -->
 
 		<footer>
-			<?php include("inc/footer.php"); ?>
+			<?php include("../inc/footer.php"); ?>
 		</footer>
 		<!-- End footer -->
 	</div>

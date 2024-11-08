@@ -16,9 +16,6 @@
 		<!-- header -->
 
 		<section id="leftColumn">
-			<nav>
-				<?php include("inc/meny.php"); ?>
-			</nav>
 			<aside>
 				<?php include("inc/aside.php"); ?>
 			</aside>
@@ -28,44 +25,17 @@
 		<main role="main">
 			<section>
 				<hgroup>
-					<h1>Välkommen till Webbserverprogrammering 1</h1>
-					<h2>Moment 3</h2>
+					<h1>Logga In</h1>
 				</hgroup>
-
-				<p>Min sida</p>
 			</section>
-			<?php
-			include("inc/counter.php");
-			$page = "start";
-			if(isset($_GET['page'])) {
-				$page = $_GET['page'];
+			<section>
+				<form method="post">
+					Username: <input type="text" name="username" size="20" /> <br>
+					Password: <input type="password" name="password" size="20" /> <br>
+					<input type="submit" value="Submit" name="login" />
 
-				switch($page) {
-					case 'blogg': include('../pages/blogg.php');
-					break;
-					case 'bilder': include('../pages/bilder.php');
-					break;
-					case 'kontakt': include('../pages/kontakt.php');
-					break;
-					default: include('index.php');
-			
-				}
-
-			}
-			
-			
-			
-			?>
-
-			<form method="post" action="../pages/kontakt.php">
-				<label>Namn</label>
-				<br>
-				<input type="text"  name="name">
-				<br>
-				<input type="submit" value="Skicka">
-
-			</form>
-
+				</form>
+			</section>
 		</main>
 		<!-- End main -->
 
