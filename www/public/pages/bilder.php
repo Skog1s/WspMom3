@@ -1,9 +1,20 @@
+<?php
+    // PUNKT 1
+    session_start();
+    // PUNKT 2    
+    if(isset($_POST['password'])){
+        if($_POST['password']=='12345' && $_POST['username']=='admin'){
+            $_SESSION['inLoggad'] = true;    
+        }
+    }    
+?>
 <!doctype html>
 <html lang="sv">
 
 <head>
 	<meta charset="utf-8">
 	<title>Länka in sidor med PHP</title>
+	<link rel="icon" type="image/x-icon" href="bilder/favicon.ico">
 	<link href="../css/styleSheet.css" rel="stylesheet" type="text/css">
 </head>
 

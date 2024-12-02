@@ -1,3 +1,25 @@
+<?php
+	session_set_cookie_params(0);
+    session_start();
+
+	if( !isset($_SESSION['inLoggad']) || $_SESSION["inLoggad"] === false) {
+		$_SESSION["inLoggad"] = false;
+
+		
+	   if(isset($_POST['password'])){
+        if($_POST['password']=='12345' && $_POST['username']=='admin'){
+            $_SESSION['inLoggad'] = true;    
+        }
+    }  
+	}
+	if($_SESSION["inLoggad"] === false) {
+		header('Location: ../index.php');
+	}
+
+   
+    
+?>
+
 <!doctype html>
 <html lang="sv">
 
@@ -41,31 +63,18 @@
 				$page = $_GET['page'];
 
 				switch($page) {
-					case 'blogg': include('/pages/blogg.php');
+					case 'blogg': include('blogg.php');
 					break;
-					case 'bilder': include('/pages/bilder.php');
+					case 'bilder': include('bilder.php');
 					break;
-					case 'kontakt': include('/pages/kontakt.php');
+					case 'kontakt': include('kontakt.php');
 					break;
 					default: include('../pages/home.php');
 			
 				}
 
 			}
-			
-			
-			
 			?>
-
-			<form method="post" action="/pages/kontakt.php">
-				<label>Namn</label>
-				<br>
-				<input type="text"  name="name">
-				<br>
-				<input type="submit" value="Skicka">
-
-			</form>
-
 		</main>
 		<!-- End main -->
 
